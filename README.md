@@ -1,48 +1,29 @@
 ![Laravel best practices](/images/logo-english.png?raw=true)
 
-Translations:
+### Translations:
 
-[Nederlands](https://github.com/Protoqol/Beste-Laravel-Praktijken) (by [Protoqol](https://github.com/Protoqol))
+- [Nederlands](https://github.com/Protoqol/Beste-Laravel-Praktijken) (by [Protoqol](https://github.com/Protoqol))
 
-[Indonesia](indonesia.md) (by [P0rguy](https://github.com/p0rguy), [Doni Ahmad](https://github.com/donyahmd))
-
-[한국어](https://github.com/xotrs/laravel-best-practices) (by [cherrypick](https://github.com/xotrs))
-
-[日本語](japanese.md) (by [2bo](https://github.com/2bo))
-
-[简体中文](chinese.md) (by [xiaoyi](https://github.com/Shiloh520))
-
-[繁體中文](traditional-chinese.md) (by [woeichern](https://github.com/woeichern))
-
-[ภาษาไทย](thai.md) (by [kongvut sangkla](https://github.com/kongvut))
-
-[বাংলা](bangla.md) (by [Anowar Hossain](https://github.com/AnowarCST))
-
-[فارسی](persian.md) (by [amirhossein baghaie](https://github.com/amirbagh75))
-
-[Português](https://github.com/jonaselan/laravel-best-practices) (by [jonaselan](https://github.com/jonaselan))
-
-[Українська](ukrainian.md) (by [Tenevyk](https://github.com/tenevyk))
-
-[Русский](russian.md)
-
-[Tiếng Việt](https://chungnguyen.xyz/posts/code-laravel-lam-sao-cho-chuan) (by [Chung Nguyễn](https://github.com/nguyentranchung))
-
-[Español](spanish.md) (by [César Escudero](https://github.com/cedaesca))
-
-[Français](french.md) (by [Mikayil S.](https://github.com/mikayilsrt))
-
-[Polski](https://github.com/maciejjeziorski/laravel-best-practices-pl) (by [Maciej Jeziorski](https://github.com/maciejjeziorski))
-
-[Türkçe](turkish.md) (by [Burak](https://github.com/ikidnapmyself))
-
-[Deutsch](german.md) (by [Sujal Patel](https://github.com/sujalpatel2209))
-
-[Italiana](italian.md) (by [Sujal Patel](https://github.com/sujalpatel2209))
-
-[Azərbaycanca](https://github.com/Maharramoff/laravel-best-practices-az) (by [Maharramoff](https://github.com/Maharramoff))
-
-[العربية](arabic.md) (by [ahmedsaoud31](https://github.com/ahmedsaoud31))
+- [Indonesia](indonesia.md) (by [P0rguy](https://github.com/p0rguy), [Doni Ahmad](https://github.com/donyahmd))
+- [한국어](https://github.com/xotrs/laravel-best-practices) (by [cherrypick](https://github.com/xotrs))
+- [日本語](japanese.md) (by [2bo](https://github.com/2bo))
+- [简体中文](chinese.md) (by [xiaoyi](https://github.com/Shiloh520))
+- [繁體中文](traditional-chinese.md) (by [woeichern](https://github.com/woeichern))
+- [ไทย](thai.md) (by [kongvut sangkla](https://github.com/kongvut))
+- [বাংলা](bangla.md) (by [Anowar Hossain](https://github.com/AnowarCST))
+- [فارسی](persian.md) (by [amirhossein baghaie](https://github.com/amirbagh75))
+- [Português](https://github.com/jonaselan/laravel-best-practices) (by [jonaselan](https://github.com/jonaselan))
+- [Українська](ukrainian.md) (by [Tenevyk](https://github.com/tenevyk))
+- [Русский](russian.md)
+- [Tiếng Việt](https://chungnguyen.xyz/posts/code-laravel-lam-sao-cho-chuan) (by [Chung Nguyễn](https://github.com/nguyentranchung))
+- [Español](spanish.md) (by [César Escudero](https://github.com/cedaesca))
+- [Français](french.md) (by [Mikayil S.](https://github.com/mikayilsrt))
+- [Polski](https://github.com/maciejjeziorski/laravel-best-practices-pl) (by [Maciej Jeziorski](https://github.com/maciejjeziorski))
+- [Türkçe](turkish.md) (by [Burak](https://github.com/ikidnapmyself))
+- [Deutsch](german.md) (by [Sujal Patel](https://github.com/sujalpatel2209))
+- [Italiana](italian.md) (by [Sujal Patel](https://github.com/sujalpatel2209))
+- [Azərbaycanca](https://github.com/Maharramoff/laravel-best-practices-az) (by [Maharramoff](https://github.com/Maharramoff))
+- [العربية](arabic.md) (by [ahmedsaoud31](https://github.com/ahmedsaoud31))
 
 It's not a Laravel adaptation of SOLID principles, patterns etc. Here you'll find the best practices which are usually ignored in real life Laravel projects.
 
@@ -88,7 +69,7 @@ It's not a Laravel adaptation of SOLID principles, patterns etc. Here you'll fin
 
 A class and a method should have only one responsibility.
 
-Bad:
+**Bad:**
 
 ```php
 public function getFullNameAttribute()
@@ -101,7 +82,7 @@ public function getFullNameAttribute()
 }
 ```
 
-Good:
+**Good:**
 
 ```php
 public function getFullNameAttribute()
@@ -131,7 +112,7 @@ public function getFullNameShort()
 
 Put all DB related logic into Eloquent models or into Repository classes if you're using Query Builder or raw SQL queries.
 
-Bad:
+**Bad:**
 
 ```php
 public function index()
@@ -146,7 +127,7 @@ public function index()
 }
 ```
 
-Good:
+**Good:**
 
 ```php
 public function index()
@@ -173,7 +154,7 @@ class Client extends Model
 
 Move validation from controllers to Request classes.
 
-Bad:
+**Bad:**
 
 ```php
 public function store(Request $request)
@@ -188,7 +169,7 @@ public function store(Request $request)
 }
 ```
 
-Good:
+**Good:**
 
 ```php
 public function store(PostRequest $request)
@@ -215,7 +196,7 @@ class PostRequest extends Request
 
 A controller must have only one responsibility, so move business logic from controllers to service classes.
 
-Bad:
+**Bad:**
 
 ```php
 public function store(Request $request)
@@ -228,7 +209,7 @@ public function store(Request $request)
 }
 ```
 
-Good:
+**Good:**
 
 ```php
 public function store(Request $request)
@@ -255,7 +236,7 @@ class ArticleService
 
 Reuse code when you can. SRP is helping you to avoid duplication. Also, reuse Blade templates, use Eloquent scopes etc.
 
-Bad:
+**Bad:**
 
 ```php
 public function getActive()
@@ -271,7 +252,7 @@ public function getArticles()
 }
 ```
 
-Good:
+**Good:**
 
 ```php
 public function scopeActive($q)
@@ -298,7 +279,7 @@ public function getArticles()
 
 Eloquent allows you to write readable and maintainable code. Also, Eloquent has great built-in tools like soft deletes, events, scopes etc.
 
-Bad:
+**Bad:**
 
 ```sql
 SELECT *
@@ -315,7 +296,7 @@ AND `active` = '1'
 ORDER BY `created_at` DESC
 ```
 
-Good:
+**Good:**
 
 ```php
 Article::has('user.profile')->verified()->latest()->get();
@@ -325,7 +306,7 @@ Article::has('user.profile')->verified()->latest()->get();
 
 ### **Mass assignment**
 
-Bad:
+**Bad:**
 
 ```php
 $article = new Article;
@@ -337,7 +318,7 @@ $article->category_id = $category->id;
 $article->save();
 ```
 
-Good:
+**Good:**
 
 ```php
 $category->article()->create($request->validated());
@@ -347,7 +328,7 @@ $category->article()->create($request->validated());
 
 ### **Do not execute queries in Blade templates and use eager loading (N + 1 problem)**
 
-Bad (for 100 users, 101 DB queries will be executed):
+**Bad (for 100 users, 101 DB queries will be executed):**
 
 ```php
 @foreach (User::all() as $user)
@@ -355,7 +336,7 @@ Bad (for 100 users, 101 DB queries will be executed):
 @endforeach
 ```
 
-Good (for 100 users, 2 DB queries will be executed):
+**Good (for 100 users, 2 DB queries will be executed):**
 
 ```php
 $users = User::with('profile')->get();
@@ -371,20 +352,20 @@ $users = User::with('profile')->get();
 
 ### **Comment your code, but prefer descriptive method and variable names over comments**
 
-Bad:
+**Bad:**
 
 ```php
 if (count((array) $builder->getQuery()->joins) > 0)
 ```
 
-Better:
+**Better:**
 
 ```php
 // Determine if there are any joins.
 if (count((array) $builder->getQuery()->joins) > 0)
 ```
 
-Good:
+**Good:**
 
 ```php
 if ($this->hasJoins())
@@ -394,13 +375,13 @@ if ($this->hasJoins())
 
 ### **Do not put JS and CSS in Blade templates and do not put any HTML in PHP classes**
 
-Bad:
+**Bad:**
 
 ```php
 let article = `{{ json_encode($article) }}`;
 ```
 
-Better:
+**Better:**
 
 ```php
 <input id="article" type="hidden" value='@json($article)'>
@@ -410,7 +391,7 @@ Or
 <button class="js-fav-article" data-article='@json($article)'>{{ $article->name }}<button>
 ```
 
-In a Javascript file:
+**In a Javascript file:**
 
 ```javascript
 let article = $('#article').val();
@@ -422,7 +403,7 @@ The best way is to use specialized PHP to JS package to transfer the data.
 
 ### **Use config and language files, constants instead of text in the code**
 
-Bad:
+**Bad:**
 
 ```php
 public function isNormal()
@@ -433,7 +414,7 @@ public function isNormal()
 return back()->with('message', 'Your article has been added!');
 ```
 
-Good:
+**Good:**
 
 ```php
 public function isNormal()
@@ -511,21 +492,21 @@ Trait | adjective | Notifiable | ~~NotificationTrait~~
 
 ### **Use shorter and more readable syntax where possible**
 
-Bad:
+**Bad:**
 
 ```php
 $request->session()->get('cart');
 $request->input('name');
 ```
 
-Good:
+**Good:**
 
 ```php
 session('cart');
 $request->name;
 ```
 
-More examples:
+**More examples:**
 
 Common syntax | Shorter and more readable syntax
 ------------ | -------------
@@ -552,14 +533,14 @@ Common syntax | Shorter and more readable syntax
 
 new Class syntax creates tight coupling between classes and complicates testing. Use IoC container or facades instead.
 
-Bad:
+**Bad:**
 
 ```php
 $user = new User;
 $user->create($request->validated());
 ```
 
-Good:
+**Good:**
 
 ```php
 public function __construct(User $user)
@@ -578,13 +559,13 @@ $this->user->create($request->validated());
 
 Pass the data to config files instead and then use the `config()` helper function to use the data in an application.
 
-Bad:
+**Bad:**
 
 ```php
 $apiKey = env('API_KEY');
 ```
 
-Good:
+**Good:**
 
 ```php
 // config/api.php
@@ -598,14 +579,14 @@ $apiKey = config('api.key');
 
 ### **Store dates in the standard format. Use accessors and mutators to modify date format**
 
-Bad:
+**Bad:**
 
 ```php
 {{ Carbon::createFromFormat('Y-d-m H-i', $object->ordered_at)->toDateString() }}
 {{ Carbon::createFromFormat('Y-d-m H-i', $object->ordered_at)->format('m-d') }}
 ```
 
-Good:
+**Good:**
 
 ```php
 // Model
